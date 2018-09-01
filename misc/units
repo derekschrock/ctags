@@ -1872,7 +1872,7 @@ failed_git_marker ()
     local f=$1
     local l
 
-    if type "git" > /dev/null 2>&1; then
+    if type "git" > /dev/null 2>&1 && [ -d .git ]; then
 	l=$(git ls-files -- "$f")
 	if [ -z "$l" ]; then
 	    echo '<G>'
